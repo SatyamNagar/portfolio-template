@@ -1,0 +1,157 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.media-hub-container {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translate(-10%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 11;
+
+}
+
+.media-hub {
+    width: 40px;
+    aspect-ratio: 1/1;
+    cursor: grab;
+    background: url('../images/contact_mail.svg') gray;
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    z-index: 11;
+    transition: background-color 200ms;
+}
+
+.media-hub:active {
+    cursor: grabbing;
+}
+
+.media-hub-content {
+    background-color: rgb(28 28 28 / 71%);
+    color: rgba(255, 255, 255, 0.866);
+    width: 80vw;
+    height: max-content;
+    padding: 20px;
+    border-radius: 10px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    transform: translateX(180vw);
+    transition: transform 800ms;
+    -webkit-box-shadow: 0px 0px 20px 4px #181818;
+    -moz-box-shadow: 0px 0px 20px 4px #181818;
+    box-shadow: 0px 0px 20px 4px #181818;
+    backdrop-filter: blur(20px);
+    z-index: 8;
+}
+
+.media-hub-content h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.connection-wraper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.social-media {
+    width: 130px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: hidden;
+}
+
+.social-media a {
+    display: flex;
+    text-decoration: none;
+}
+
+.social-media a span {
+    height: 35px;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+    background-size: 35px;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: grayscale() contrast(1.5) brightness(.8);
+}
+
+.social-media a span:hover {
+    filter: none;
+}
+
+.insta {
+    background: url('../images/instagram.png');
+}
+
+.linkedIn {
+    background: url('../images/linkedin.png');
+}
+
+.github {
+    border-radius: 10%;
+    height: 25px !important;
+    background-size: 95% !important;
+    background: url('../images/github.png') white;
+}
+
+/* Form Text Field */
+
+.custom-field label {
+    color: rgb(150, 150, 150);
+    font-size: .8rem;
+}
+
+.custom-field:hover label {
+    color: rgba(255, 255, 255, 0.866);
+}
+
+.custom-field label.Mui-focused {
+    color: rgba(255, 255, 255, 0.866);
+}
+
+.custom-field .MuiOutlinedInput-root.Mui-focused fieldset {
+    border-color: white;
+}
+
+.custom-field:hover fieldset {
+    border-color: rgba(255, 255, 255, 0.866) !important;
+}
+
+.custom-field fieldset {
+    border-color: rgb(60, 60, 60);
+}
+
+.custom-field input {
+    color: rgba(255, 255, 255, 0.866);
+}
+
+.custom-field textarea {
+    color: rgba(255, 255, 255, 0.866);
+}

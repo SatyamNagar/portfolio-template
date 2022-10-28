@@ -1,0 +1,773 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --customBlack: black;
+    --typeSpeed: 3.5s;
+}
+
+.HomeBody {
+    color: white;
+    background-color: var(--customBlack);
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: auto 22%;
+    padding-top: 20vh;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-grid {
+    position: absolute;
+    display: flex;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100vh;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.hero-grid-items {
+    background-color: var(--customBlack);
+
+    background-image: linear-gradient(135deg, var(--theme) 12%, transparent 12%), linear-gradient(225deg, var(--theme) 12%, transparent 12%), linear-gradient(45deg, var(--theme) 12%, transparent 12%), linear-gradient(315deg, var(--theme) 12%, transparent 12%);
+    background-position: 10px 0, 10px 0, 0 0, 0 0;
+    background-size: 10px 10px;
+    background-repeat: repeat;
+
+    width: calc(100vw / 13);
+    height: calc(100vw / 13);
+    opacity: 0;
+    transition: opacity 2s ease 2.4s, transform 0.8s ease;
+    transform: scale(1);
+}
+
+.hero-grid-items:hover {
+    opacity: 1;
+    transition: opacity 0.2s ease;
+    transform: scale(1.04);
+    animation: grid-anim 1.3s linear 1s forwards;
+}
+
+@keyframes grid-anim {
+    to {
+        opacity: 0;
+    }
+}
+
+.intro {
+    margin-top: 10vh;
+    padding: 8px;
+    z-index: 2;
+    width: fit-content;
+    height: fit-content;
+}
+
+.intro h1 {
+    font-size: 2.5rem;
+    margin-left: 1em;
+    margin-top: 1.3em;
+    font-family: monospace;
+    font-weight: 400;
+    position: relative;
+    width: max-content;
+    color: var(--textColor);
+    text-overflow: clip;
+}
+
+.intro h1>a {
+    font-family: monospace;
+    color: var(--theme);
+    text-decoration: none;
+}
+
+.intro h1::before,
+.intro h1::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.intro h1::before {
+    background-color: var(--customBlack);
+    animation: typewriter var(--typeSpeed) steps(var(--name-steps)) 1s forwards;
+}
+
+.intro h1::after {
+    width: 0.125em;
+    background-color: rgb(181, 181, 181);
+    animation: typewriter var(--typeSpeed) steps(var(--name-steps)) 1s forwards,
+        blink 650ms steps(var(--name-steps)) infinite;
+}
+
+.intro p {
+    font-size: calc(2.5rem - 15px);
+    font-family: monospace;
+    margin-left: calc(1em + 10px);
+    display: inline-block;
+    margin-top: 1.5em;
+    transform: translateY(100px);
+    opacity: 0;
+    padding: 5px;
+    animation: slideTop 1s ease calc(var(--typeSpeed) + 1s) forwards;
+    color: var(--theme);
+    background-color: var(--customBlack);
+}
+
+@keyframes typewriter {
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes blink {
+    to {
+        background-color: transparent;
+    }
+}
+
+@keyframes slideTop {
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.profile {
+    width: max-content;
+    height: 50vh;
+    justify-self: right;
+    margin-right: -23rem;
+    animation: slideLeft 1.5s ease calc(var(--typeSpeed) - .02s) forwards;
+    z-index: 2;
+}
+
+.profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 2rem;
+    box-shadow: 3px 3px 10px 1px rgb(51, 51, 51);
+    filter: grayscale() brightness(.9) contrast(.9);
+}
+
+@keyframes slideLeft {
+    to {
+        margin-right: 3rem;
+    }
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 65px;
+    width: 65px;
+    background: url('../images/down_arrow.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: invert();
+    visibility: hidden;
+    animation: scrollAnim 1.5s 8s ease-out infinite;
+    z-index: 2;
+}
+
+@keyframes scrollAnim {
+    0% {
+        bottom: 25px;
+        visibility: visible;
+    }
+
+    40% {
+        bottom: 0px;
+    }
+
+    60% {
+        bottom: 10px;
+    }
+
+    80% {
+        bottom: 0px;
+    }
+
+    100% {
+        bottom: 25px;
+    }
+}
+
+
+/* #Skills */
+
+.skills {
+    padding: 0 0 10vh 0;
+    background-color: #1c1c1c;
+}
+
+.h2-heading {
+    text-align: center;
+    font-size: 4rem;
+    padding: .8em;
+    color: var(--theme);
+    font-weight: 600;
+    letter-spacing: .01em;
+}
+
+.skills-container {
+    height: fit-content;
+    width: 50vw;
+    background-color: #1212127d;
+    margin: auto;
+    flex-direction: column;
+    margin-top: 3.5rem;
+    border-radius: 1.2rem;
+    box-shadow: 0px 0px 20px 1px #0c0c0c;
+    overflow: hidden;
+}
+
+.skill-filter {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    background-color: #0c0c0c;
+}
+
+.skill-filter li {
+    list-style: none;
+    padding: 8px 0px;
+}
+
+.skill-filter li:hover {
+    cursor: pointer;
+    color: var(--theme);
+}
+
+.sf-active {
+    color: var(--theme);
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    gap: 5px;
+}
+
+.skill-list li {
+    height: 120px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-overflow: clip;
+    background-color: #0c0c0c;
+    border-radius: 20%;
+    transition: all 250ms;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.skill-list ul:hover div {
+    transform: rotateY(180deg);
+}
+
+.skill-list ul,
+.skill-list ul div {
+    height: 127px;
+    width: 127px;
+    transform-style: preserve-3d;
+    transition: transform .8s;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+
+.skill-list ul div {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.skill-li-front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.skill-li-back {
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.skill-1 {
+    background: url('../images/skills/react-logo.svg') #0c0c0c;
+    background-repeat: no-repeat;
+    background-size: 40px;
+    background-position: center;
+    object-fit: contain;
+}
+
+.skill-2 {
+    background: url('../images/skills/django-logo.svg') #0c0c0c;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;
+    object-fit: contain;
+}
+
+.skill-3 {
+    background: url('../images/skills/nodejs-logo.svg') #0c0c0c;
+    background-repeat: no-repeat;
+    background-size: 60px;
+    background-position: center;
+    object-fit: contain;
+}
+
+.skill-4 {
+    background: url('../images/skills/python-logo.svg') #0c0c0c;
+    background-repeat: no-repeat;
+    background-size: 40px;
+    background-position: center;
+    object-fit: contain;
+}
+
+.skill-5 {
+    background: url('../images/skills/javascript-logo.svg') #0c0c0c;
+    background-repeat: no-repeat;
+    background-size: 40px;
+    background-position: center;
+    object-fit: contain;
+}
+
+.skill-6 {
+    background: url('../images/skills/html5-logo.svg') #0c0c0c;
+    background-repeat: no-repeat;
+    background-size: 40px;
+    background-position: center;
+    object-fit: contain;
+}
+
+.skill-7 {
+    background: url('../images/skills/css3-logo.svg') #0c0c0c;
+    background-repeat: no-repeat;
+    background-size: 40px;
+    background-position: center;
+    object-fit: contain;
+}
+
+.skill-8 {
+    background: url('../images/skills/responsiveDesign.png') #0c0c0c;
+    background-repeat: no-repeat;
+    background-size: 90px;
+    background-position: center;
+    object-fit: contain;
+}
+
+.skill-9 {
+    background: url('../images/skills/bootstrap5-logo.svg') #0c0c0c;
+    background-repeat: no-repeat;
+    background-size: 50px;
+    background-position: center;
+    object-fit: contain;
+}
+
+.skill-10 {
+    background: url('../images/skills/material-ui-logo.svg') #0c0c0c;
+    background-repeat: no-repeat;
+    background-size: 45px;
+    background-position: center;
+    object-fit: contain;
+}
+
+.skill-11 {
+    background: url('../images/skills/dataStructures.png') #0c0c0c;
+    background-repeat: no-repeat;
+    background-size: 45px;
+    background-position: center;
+    object-fit: contain;
+}
+
+.skill-12 {
+    background: url('../images/skills/objectOriented.png') #0c0c0c;
+    background-repeat: no-repeat;
+    background-size: 60px;
+    background-position: center;
+    object-fit: contain;
+}
+
+.skill-13 {
+    background: url('../images/skills/java-logo.svg') #0c0c0c;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;
+    object-fit: contain;
+}
+
+.skill-14 {
+    background: url('../images/skills/cpp-logo.svg') #0c0c0c;
+    background-repeat: no-repeat;
+    background-size: 40px;
+    background-position: center;
+    object-fit: contain;
+}
+
+.skill-15 {
+    background: url('../images/skills/c-logo.svg') #0c0c0c;
+    background-repeat: no-repeat;
+    background-size: 40px;
+    background-position: center;
+    object-fit: contain;
+}
+
+.skill-16 {
+    background: url('../images/skills/vbnet-logo.svg') #0c0c0c;
+    background-repeat: no-repeat;
+    background-size: 50px;
+    background-position: center;
+    object-fit: contain;
+}
+
+.skill-17 {
+    background: url('../images/skills/git-logo.svg') #0c0c0c;
+    background-repeat: no-repeat;
+    background-size: 50px;
+    background-position: center;
+    object-fit: contain;
+}
+
+.skill-18 {
+    background: url('../images/skills/mongodb-logo.svg') #0c0c0c;
+    background-repeat: no-repeat;
+    background-size: 50px;
+    background-position: center;
+    object-fit: contain;
+}
+
+.skill-19 {
+    background: url('../images/skills/mysql-logo.svg') #0c0c0c;
+    background-repeat: no-repeat;
+    background-size: 40px;
+    background-position: center;
+    object-fit: contain;
+}
+
+.skill-20 {
+    background: url('../images/skills/sqlite-logo.svg') #0c0c0c;
+    background-repeat: no-repeat;
+    background-size: 150px;
+    background-position: center;
+    object-fit: contain;
+}
+
+
+/* #Projects */
+
+.my-projects {
+    height: fit-content;
+    width: 100%;
+}
+
+.projects-container {
+    margin: auto;
+    width: fit-content;
+}
+
+.projects-container ul {
+    padding: 3rem;
+}
+
+.projects-container ul li {
+    cursor: pointer;
+    transition: opacity 200ms, scale 400ms ease;
+}
+
+.projects-container ul:hover li {
+    scale: .9;
+    opacity: .5;
+}
+
+.projects-container ul li:hover {
+    scale: 1.03;
+    z-index: 2;
+    opacity: 1;
+    transition: all 200ms;
+}
+
+
+/* #Resume */
+
+.my-resume {
+    height: fit-content;
+    padding: 0 0 10vh 0;
+    background-color: #1c1c1c;
+}
+
+iframe[title='myResume'] {
+    margin: auto;
+    display: flex;
+    height: 95vh;
+    width: 60vw;
+}
+
+/* #Footer */
+
+.footer {
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.copyright p {
+    color: var(--textColor);
+    text-align: center;
+}
+
+.copyright p a {
+    text-decoration: none;
+    color: var(--theme);
+}
+
+@media (max-width:1400px) {
+    .skills-container {
+        width: 85vw;
+    }
+
+    .hero-grid-items {
+        width: calc(100vw / 12);
+        height: calc(100vw / 12);
+    }
+}
+
+@media (max-width:1150px) {
+    .intro h1 {
+        font-size: 2.2rem;
+    }
+
+    .intro p {
+        font-size: calc(2.2rem - 15px);
+    }
+
+    .hero-grid-items {
+        width: calc(100vw / 11);
+        height: calc(100vw / 11);
+    }
+}
+
+@media (max-width:1000px) {
+    .hero {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .hero-grid-items {
+        width: calc(100vw / 10);
+        height: calc(100vw / 10);
+    }
+
+    .profile {
+        height: 40vh;
+        position: absolute;
+        top: 15%;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    .intro {
+        margin-top: 20vh;
+    }
+
+    .intro h1 {
+        margin: auto;
+    }
+
+    .intro p {
+        font-size: 1.7rem;
+        margin: auto;
+        margin-top: 1.5em;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width:940px) {
+
+    iframe[title='myResume'] {
+        width: 90vw;
+    }
+
+    .h2-heading {
+        font-size: 3.2rem;
+    }
+
+    .projects-container ul {
+        width: 95vw;
+    }
+
+    .hero-grid-items {
+        width: calc(100vw / 8);
+        height: calc(100vw / 8);
+    }
+}
+
+@media (max-width:740px) {
+    .skills-container {
+        width: 95vw;
+    }
+
+    .skill-filter {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width:660px) {
+    .intro h1 {
+        font-size: 1.8rem;
+    }
+
+    .intro p {
+        font-size: 1.35rem;
+    }
+
+    .profile {
+        height: 35vh;
+        top: 18%;
+    }
+
+    .hero-grid-items {
+        width: calc(100vw / 7);
+        height: calc(100vw / 7);
+    }
+}
+
+@media (max-width:550px) {
+    .intro h1 {
+        font-size: 1.5rem;
+    }
+
+    .intro p {
+        font-size: 1.2rem;
+    }
+
+    .intro {
+        padding: 0%;
+    }
+
+    .h2-heading {
+        font-size: 2.8rem;
+    }
+
+    iframe[title='myResume'] {
+        height: 70vh;
+    }
+}
+
+@media (max-width:480px) {
+    .intro h1 {
+        font-size: 1.25rem;
+    }
+
+    .intro p {
+        font-size: 1rem;
+    }
+
+    .h2-heading {
+        font-size: 2.2rem;
+    }
+
+    .skill-filter li {
+        font-size: .85rem;
+    }
+
+    .skill-list {
+        padding: 10px;
+        gap: 2px;
+    }
+
+    .skill-list li {
+        height: 105px;
+        width: 105px;
+    }
+
+    .skill-list ul,
+    .skill-list ul div {
+        height: 110px;
+        width: 110px;
+    }
+
+    .projects-container ul {
+        width: 100%;
+        padding: 3rem .4rem;
+    }
+
+    .hero-grid-items {
+        width: calc(100vw / 6);
+        height: calc(100vw / 6);
+    }
+}
+
+@media (max-width:380px) {
+    .intro h1 {
+        font-size: 1rem;
+    }
+
+    .intro p {
+        font-size: .81rem;
+    }
+
+    .h2-heading {
+        font-size: 1.8rem;
+    }
+
+    .skill-filter li {
+        font-size: .8rem;
+    }
+
+    .skill-list {
+        padding: 10px;
+        gap: 2px;
+    }
+
+    .skill-list li {
+        height: 90px;
+        width: 90px;
+    }
+
+    .skill-list ul,
+    .skill-list ul div {
+        height: 95px;
+        width: 95px;
+    }
+
+    .skill-li-back {
+        font-size: .8rem;
+    }
+
+}
