@@ -1,18 +1,29 @@
 # Getting Started #
 
 
+// [ Inside `./public/index.html` ]
+
+
+1. Update the <title> of your web app.
+
+2. Update Fav Icon and manifest.json.
+
+
+--------------------------------------------------------------------------------------
+
+
 // [ Inside `./src/components/Home.js` ]
 
 
 => Inside div className = 'hero'
 
-1. Change 'Your Name' and provide a social link in the anchor tag. 
+3. Change 'Your Name' and provide a social link in the anchor tag. 
 
-- 1.1. Make sure the whole h1 tag containing your name does not excede 35 chars for better site responsiveness.
+- 3.1. Make sure the whole h1 tag containing your name does not excede 35 chars for better site responsiveness.
 
-2. Update your role inside the '<p>' tag right below the name '<h1>' tag.
+4. Update your role inside the '<p>' tag right below the name '<h1>' tag.
 
-3. Update the profile picture.
+5. Update the profile picture.
 
 
 --------------------------------------------------------------------------------------
@@ -20,9 +31,9 @@
 
 => Inside div className = 'skills'
 
-4. Update your skills with a logo (inside <li className='skill-li-front'> ) and name (inside <li className='skill-li-back'>)
+6. Update your skills with a logo (inside <li className='skill-li-front'> ) and name (inside <li className='skill-li-back'>)
 
-5. You can also change filter headings and their state value for more personalised view.
+7. You can also change filter headings and their state value for more personalised view.
 
 
 --------------------------------------------------------------------------------------
@@ -32,9 +43,9 @@
 
 <+++>     Inherited from `Projects.js` inside the same directory.     <+++>
 
-6. GoTo `Projects.js` and under an object named <itemData> update <img:> links as per your need.
+8. GoTo `Projects.js` and under an object named <itemData> update <img:> links as per your need.
 
-7. You can also add or remove project-items.
+9. You can also add or remove project-items.
 
 
 --------------------------------------------------------------------------------------
@@ -42,7 +53,7 @@
 
 => Inside div className = 'projects'
 
-7. Just upload your pdf in `./src/images/docs` and update the path of the imported object named <resume> at the top of of `Home.js` file.
+10. Just upload your pdf in `./src/images/docs` and update the path of the imported object named <resume> at the top of of `Home.js` file.
 
 
 --------------------------------------------------------------------------------------
@@ -50,7 +61,7 @@
 
 // [ Inside `./src/components/MediaHub.js` ]
 
-8. Update all the social media links of each '<a>' tag inside a '<div className='connection-wraper'>' 
+11. Update all the social media links of each '<a>' tag inside a '<div className='connection-wraper'>' 
 
 ------------------------------
 For More Details (or reporting bugs or any other issues), Contact Me.
@@ -69,6 +80,12 @@ For More Details (or reporting bugs or any other issues), Contact Me.
 ## Available Scripts
 
 In the project directory, you can run:
+
+
+
+### `npm install`
+
+Installs the node_modules folder which is required* to run the development server on your local network.
 
 
 
