@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/portfolio-template/static/css/main.7baf47e1.css",
+    "main.css": "/portfolio-template/static/css/main.4c464f0a.css",
     "main.js": "/portfolio-template/static/js/main.5773ab76.js",
     "static/media/Modern Grey Resume .png": "/portfolio-template/static/media/Modern Grey Resume .52ee136b5f5f09201900.png",
     "static/media/Modern Grey Resume .pdf": "/portfolio-template/static/media/Modern Grey Resume .312e4b3e1f8f53ab570e.pdf",
@@ -27,11 +27,11 @@
     "static/media/html5-logo.svg": "/portfolio-template/static/media/html5-logo.f318c8b1d5945fa9adc8.svg",
     "static/media/material-ui-logo.svg": "/portfolio-template/static/media/material-ui-logo.fd510ed8518b19206959.svg",
     "static/media/down_arrow.svg": "/portfolio-template/static/media/down_arrow.f9e4ceb242628cb0100d.svg",
-    "main.7baf47e1.css.map": "/portfolio-template/static/css/main.7baf47e1.css.map",
+    "main.4c464f0a.css.map": "/portfolio-template/static/css/main.4c464f0a.css.map",
     "main.5773ab76.js.map": "/portfolio-template/static/js/main.5773ab76.js.map"
   },
   "entrypoints": [
-    "static/css/main.7baf47e1.css",
+    "static/css/main.4c464f0a.css",
     "static/js/main.5773ab76.js"
   ]
 }
