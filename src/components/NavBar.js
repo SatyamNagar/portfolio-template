@@ -17,7 +17,9 @@ export default function NavBar(props) {
     });
 
     window.addEventListener('scroll', () => {
-        window.scrollY !== 0 ? document.getElementById('NavbarBody').className = 'NavbarBody active' : document.getElementById('NavbarBody').className = 'NavbarBody';
+        if (window.screen.width > 860) {
+            window.scrollY !== 0 ? document.getElementById('NavbarBody').className = 'NavbarBody active' : document.getElementById('NavbarBody').className = 'NavbarBody';
+        }
     })
 
 
@@ -33,11 +35,11 @@ export default function NavBar(props) {
     });
 
     document.addEventListener('touchend', function () {
-        if (startingY + 100 < movingY) {
+        if (startingY + 10 < movingY) {
             document.getElementById('NavbarBody').style.transition = '.8s all';
             document.getElementById('NavbarBody').style.transform = 'translateY(0%)';
 
-        } else if (startingY - 100 > movingY) {
+        } else if (startingY - 10 > movingY) {
             document.getElementById('NavbarBody').style.transition = '.8s all';
             document.getElementById('NavbarBody').style.transform = 'translateY(-150%)';
         }
@@ -49,7 +51,7 @@ export default function NavBar(props) {
 
 
     return (
-        <div className='NavbarBody' id='NavbarBody'>
+        <div className={`NavbarBody ${window.screen.width <= 860 ? 'active' : ''}`} id='NavbarBody'>
             <div className="nav-container">
                 <div className="logo">
 

@@ -50,6 +50,8 @@ input[type=number] {
     color: rgba(255, 255, 255, 0.866);
     width: 80vw;
     height: max-content;
+    max-height: 70vh;
+    overflow-y: scroll;
     padding: 20px;
     border-radius: 10px;
     position: fixed;

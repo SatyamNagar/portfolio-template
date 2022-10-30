@@ -69,6 +69,10 @@
     .menu {
         width: 55%;
     }
+
+    .NavbarBody.active {
+        padding: 5px 0px;
+    }
 }
 
 @media (max-width:580px) {

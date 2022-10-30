@@ -35,7 +35,7 @@ export default function Home(props) {
         document.documentElement.style.setProperty('--name-steps', name.length);
 
         let i = 0;
-        while (i < 60) {
+        while (i < 100) {
             const dGrid = document.createElement('div');
             dGrid.className = 'hero-grid-items';
             document.querySelector('.hero-grid').appendChild(dGrid);
@@ -105,7 +105,12 @@ export default function Home(props) {
             <div className="my-resume">
                 <h2 className='h2-heading'>&#60;!-- My Resume --&#62;</h2>
 
-                <iframe title='myResume' src={`${resume}#zoom=FitH`} />
+                <div className="resume-container">
+                    <img src={require('../images/docs/Modern Grey Resume .png')} alt="resume" />
+                </div>
+                <a className="pdf-download" href={resume} target='_blank'>
+                    <div>Download</div>
+                </a>
             </div>
 
             <div className="footer">

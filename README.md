@@ -51,9 +51,11 @@
 --------------------------------------------------------------------------------------
 
 
-=> Inside div className = 'projects'
+=> Inside div className = 'resume'
 
-10. Just upload your pdf in `./src/images/docs` and update the path of the imported object named <resume> at the top of of `Home.js` file.
+10. Upload both a png image of your pdf and the pdf itself inside `./src/images/docs` and update the path of <img> tag with the path of the png image and the imported object named <resume> with the path of the pdf file, at the top of `Home.js` file.
+
+11. Set <resume> as the href of the download button's <a> tag.
 
 
 --------------------------------------------------------------------------------------
